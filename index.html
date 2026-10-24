@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vice City — سيرفر رول بلاي عربي</title>
+<meta name="description" content="Vice City سيرفر رول بلاي عربي: عصابات، شرطة، اقتصاد، ومتجر رسمي.">
+<meta name="theme-color" content="#07030f">
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#home" class="brand"><img src="/logo.png" alt=""><b class="s-name">Vice City</b></a>
+    <nav class="links" id="links">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#about">عن السيرفر</a>
+      <a href="#store">المتجر</a>
+      <a href="#rules">القوانين</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="cartBtn" aria-label="السلة" data-magnetic>
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+        <span class="badge hidden" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="القائمة"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="pill"><i></i> السيرفر يعمل الآن — انضم لنا</span>
+      <h1 class="s-name">Vice City</h1>
+      <p class="lead" id="tagline">مدينة لا تنام… رول بلاي عربي بمستوى آخر</p>
+      <div class="cta">
+        <a href="#store" class="btn btn-primary" data-magnetic>تصفح المتجر</a>
+        <a href="#rules" class="btn btn-ghost" data-magnetic>اقرأ القوانين</a>
+        <a href="#" class="btn btn-ghost hidden" id="discordBtn" target="_blank" rel="noopener noreferrer" data-magnetic>ديسكورد</a>
+      </div>
+      <div class="ip-chip hidden" id="ipChip" title="اضغط للنسخ"><span>عنوان الاتصال:</span><b id="ipText"></b></div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="halo"></div><div class="ring r1"></div><div class="ring r2"></div>
+      <img class="logo3d" src="/logo.png" alt="شعار Vice City">
+    </div>
+  </div>
+  <div class="scroll-hint"></div>
+</section>
+
+<section class="stats"><div class="wrap"><div class="grid" id="stats"></div></div></section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">ABOUT</span><h2>عن <span class="s-name">Vice City</span></h2></div>
+    <p class="about-text reveal" id="aboutText"></p>
+    <div class="about-grid" id="features"></div>
+  </div>
+</section>
+
+<section id="store">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">STORE</span><h2>المتجر الرسمي</h2><p>ادعم السيرفر واحصل على مميزات حصرية. الطلب يتم عبر السلة ثم يتواصل معك فريق الإدارة.</p></div>
+    <div class="toolbar reveal">
+      <div class="chips" id="cats"></div>
+      <label class="search"><input id="q" type="search" placeholder="ابحث عن منتج..." autocomplete="off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></label>
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">RULES</span><h2>قوانين المدينة</h2><p>الجهل بالقانون لا يعفيك من المحاسبة. اقرأ القوانين جيداً قبل الدخول.</p></div>
+    <div class="tabs reveal" id="tabs"></div>
+    <div class="rules-bar reveal"><label class="search"><input id="rq" type="search" placeholder="ابحث في القوانين..." autocomplete="off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></label></div>
+    <div class="rule-list" id="ruleList"></div>
+    <div class="expand-all"><button class="btn btn-ghost btn-sm" id="toggleAll">فتح الكل</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="/logo.png" alt=""><b class="s-name">Vice City</b></div>
+    <div class="fl"><a href="#about">عن السيرفر</a><a href="#store">المتجر</a><a href="#rules">القوانين</a><a href="/admin">لوحة التحكم</a></div>
+    <small>© <span id="yr"></span> <span class="s-name">Vice City</span> — جميع الحقوق محفوظة</small>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="السلة">
+  <header><span>🛒 سلة المشتريات</span><button class="icon-btn" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></header>
+  <div class="items" id="cartItems"></div>
+  <div class="sum"><div class="tot"><span>الإجمالي</span><span id="cartTotal">0</span></div><button class="btn btn-primary" id="checkoutBtn">إتمام الطلب</button></div>
+</aside>
+<div class="modal" id="modal"><div class="box" id="modalBox"></div></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="/fx.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

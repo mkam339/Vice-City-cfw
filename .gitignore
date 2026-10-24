@@ -1,0 +1,4 @@
+db.json
+db.json.tmp
+up-*
+node_modules/

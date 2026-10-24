@@ -1,0 +1,9 @@
+{
+  "name": "vice-city-site",
+  "version": "1.0.0",
+  "description": "موقع ومتجر سيرفر Vice City مع لوحة تحكم",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}
